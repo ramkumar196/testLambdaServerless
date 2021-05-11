@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('Loading function test');
+console.log('Loading function test ..');
 
 exports.handler = (event, context, callback) => {
     //console.log('Received event:', JSON.stringify(event, null, 2));
