@@ -5,7 +5,7 @@ phases:
         python: 3.8
   build:
     commands:
-      - sam package --template-file template.yml --s3-bucket testRamBucket --output-template-file packaged-template.yml
+      - sam package --template-file template.yaml --s3-bucket testrambucket --output-template-file packaged-template.yml
 artifacts:
   files:
     - packaged-template.yml
