@@ -12,6 +12,7 @@ Metadata:
 Parameters: 
     IdentityNameParameter: 
       Type: String
+      Default:"xyz"
 Resources:
   helloworld:
     Type: 'AWS::Serverless::Function'
