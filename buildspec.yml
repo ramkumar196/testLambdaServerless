@@ -6,14 +6,14 @@ phases:
       nodejs: 12
     commands:
       - "cd /usr/bin"
-      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
+      - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/0.15.3/terraform_0.15.3_linux_amd64.zip"
       - "unzip -o terraform.zip"
 
   build:
     commands:
       - cd "$CODEBUILD_SRC_DIR"
-      - terraform init -input=false --backend-config=./env_vars/${TF_ENV}.conf
-      - terraform plan -input=false -var-file=./env_vars/${TF_ENV}.tfvars -auto-approve
+      - terraform init -input=false --backend-config=./env_vars/dev.conf
+      - terraform plan -input=false -var-file=./env_vars/dev.tfvars -auto-approve
 
   post_build:
     commands:
