@@ -78,7 +78,7 @@ resource aws_iam_policy this {
 EOF
 }
 module lambda {
-  source = "https://github.com/ramkumar196/testLambdaServerless"
+    source = "terraform-aws-modules/lambda/aws"
 
   function_name  = "ramTerraformLambda"
   filename       = data.archive_file.lambda.output_path
