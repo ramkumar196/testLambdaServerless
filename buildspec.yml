@@ -14,7 +14,7 @@ phases:
       - cd "$CODEBUILD_SRC_DIR"
       - terraform init -input=false --backend-config=./env_vars/dev.conf
       - terraform plan -input=false -out=plan.tfplan
-      - terraform apply -input=false
+      - terraform apply "plan.tfplan" -auto-approve
 
   post_build:
     commands:
