@@ -13,7 +13,7 @@ phases:
     commands:
       - cd "$CODEBUILD_SRC_DIR"
       - terraform init -input=false --backend-config=./env_vars/dev.conf
-      - terraform plan -input=false
+      - terraform plan -input=false -out=plan.tfplan
       - terraform apply -input=false
 
   post_build:
